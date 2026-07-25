@@ -1,0 +1,37 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "ww2_historical_weapons_mod:item/payload",
+		"1": "ww2_historical_weapons_mod:item/handle",
+		"particle": "ww2_historical_weapons_mod:item/payload"
+	},
+	"elements": [
+		{
+			"name": "handle",
+			"from": [9, -2, 9],
+			"to": [11, 9, 11],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 11], "texture": "#1"},
+				"east": {"uv": [2, 0, 4, 11], "texture": "#1"},
+				"south": {"uv": [4, 0, 6, 11], "texture": "#1"},
+				"west": {"uv": [6, 0, 8, 11], "texture": "#1"},
+				"up": {"uv": [10, 2, 8, 0], "texture": "#1"},
+				"down": {"uv": [10, 2, 8, 4], "texture": "#1"}
+			}
+		},
+		{
+			"name": "payload",
+			"from": [8, 8, 8],
+			"to": [12, 13, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 5], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 5], "texture": "#0"},
+				"south": {"uv": [0, 5, 4, 10], "texture": "#0"},
+				"west": {"uv": [4, 5, 8, 10], "texture": "#0"},
+				"up": {"uv": [12, 4, 8, 0], "texture": "#0"},
+				"down": {"uv": [12, 4, 8, 8], "texture": "#0"}
+			}
+		}
+	]
+}
