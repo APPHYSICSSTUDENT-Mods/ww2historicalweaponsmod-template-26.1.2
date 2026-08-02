@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "ww2_historical_weapons_mod:item/zb26_round"
+  }
+}

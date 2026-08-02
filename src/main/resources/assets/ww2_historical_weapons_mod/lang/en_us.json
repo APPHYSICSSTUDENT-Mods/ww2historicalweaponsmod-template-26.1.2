@@ -1,4 +1,15 @@
 {
-
-  "item.ww2_historical_weapons_mod.zb_26": "ZB vz. 26"
+  "itemGroup.ww2_historical_weapons_mod": "WW2 Historical Weapons",
+  "item.ww2_historical_weapons_mod.type_11": "Type 11 LMG",
+  "item.ww2_historical_weapons_mod.zb_26": "ZB-26 LMG",
+  "item.ww2_historical_weapons_mod.gunpowder_nugget": "Gunpowder Nugget",
+  "item.ww2_historical_weapons_mod.redstone_nugget": "Redstone Nugget",
+  "item.ww2_historical_weapons_mod.ammo_6_5_mm": "6.5x50mm Round",
+  "item.ww2_historical_weapons_mod.zb26_round": "7.92x57mm Mauser Round",
+  "item.ww2_historical_weapons_mod.five_round_clip_65": "6.5x50mm 5-Round Stripper Clip",
+  "item.ww2_historical_weapons_mod.five_round_clip_zb": "7.92x57mm Mauser 5-Round Stripper Clip",
+  "item.ww2_historical_weapons_mod.twenty_round_clip": "20-Round Ammo Bundle",
+  "item.ww2_historical_weapons_mod.zb26_magazine": "Empty ZB-26 Magazine",
+  "item.ww2_historical_weapons_mod.loaded_zb26_magazine": "Loaded ZB-26 Magazine",
+  "item.ww2_historical_weapons_mod.stick_grenade" : "Type 24 Grenade"
 }

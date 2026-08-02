@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [{ "item": "minecraft:redstone" }],
+  "result": { "item": "ww2_historical_weapons_mod:redstone_nugget", "count": 9 }
+}

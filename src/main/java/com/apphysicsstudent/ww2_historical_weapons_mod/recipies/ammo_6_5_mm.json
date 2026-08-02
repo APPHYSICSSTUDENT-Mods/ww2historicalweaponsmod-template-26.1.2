@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "CGC",
+    " R "
+  ],
+  "key": {
+    "N": { "item": "minecraft:iron_nugget" },
+    "C": { "item": "minecraft:copper_ingot" },
+    "G": { "item": "minecraft:gunpowder" },
+    "R": { "item": "ww2_historical_weapons_mod:redstone_nugget" }
+  },
+  "result": { "item": "ww2_historical_weapons_mod:ammo_6_5_mm", "count": 1 }
+}

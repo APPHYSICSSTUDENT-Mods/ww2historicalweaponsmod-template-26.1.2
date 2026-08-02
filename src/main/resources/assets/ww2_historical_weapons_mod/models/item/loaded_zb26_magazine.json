@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ww2_historical_weapons_mod:item/loaded_zb26_magazine"
+  }
+}
