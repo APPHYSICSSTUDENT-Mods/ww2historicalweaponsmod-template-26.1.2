@@ -92,7 +92,7 @@ public class WW2Historicalweaponsmod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         // Check if the tab being built is the Combat tab
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            // Add your grenade to the tab! (Make sure to reference wherever your item is registered)
+            // Add grenade to the tab!
             event.accept(STICK_GRENADE.get());
         }
     }
