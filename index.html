@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW2 Historical Weapons Mod - Official Recipe Guide</title>
+    
+    <!-- 
+      ANALYTICS SETUP INSTRUCTIONS:
+      1. GoatCounter (Recommended): Replace "YOUR-ACCOUNT-NAME" below with your GoatCounter code.
+      <script data-goatcounter="https://YOUR-ACCOUNT-NAME.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+      
+      2. Google Analytics 4:
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      </script>
+    -->
+
+    <style>
+        :root {
+            --bg-color: #0f1217;
+            --card-bg: #181c24;
+            --card-border: #2a313d;
+            --slot-bg: #222834;
+            --slot-border: #384252;
+            --slot-hover: #2d3545;
+            --accent-green: #2ea043;
+            --accent-amber: #e3b341;
+            --accent-blue: #388bfd;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --header-bg: #161b22;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--card-border);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge-mod {
+            display: inline-block;
+            background: rgba(46, 160, 67, 0.15);
+            color: #3fb950;
+            border: 1px solid rgba(46, 160, 67, 0.4);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Controls / Search Bar */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        /* Recipe Grid */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+
+        .recipe-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-2px);
+            border-color: #444c56;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .card-type {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .type-shaped {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+
+        .type-shapeless {
+            background: rgba(227, 179, 65, 0.15);
+            color: #d29922;
+            border: 1px solid rgba(227, 179, 65, 0.3);
+        }
+
+        /* Minecraft Crafting Table Layout */
+        .crafting-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 15px 0 20px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .grid-3x3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            background: #12161f;
+            padding: 6px;
+            border-radius: 6px;
+            border: 2px solid var(--slot-border);
+        }
+
+        .slot {
+            width: 48px;
+            height: 48px;
+            background: var(--slot-bg);
+            border: 1px solid var(--slot-border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #d0d7de;
+            padding: 2px;
+            word-break: break-word;
+            position: relative;
+        }
+
+        .slot:hover {
+            background: var(--slot-hover);
+        }
+
+        .slot.empty {
+            background: rgba(255,255,255,0.02);
+            border-style: dashed;
+        }
+
+        .crafting-arrow {
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .output-slot-container {
+            position: relative;
+        }
+
+        .slot.output {
+            width: 58px;
+            height: 58px;
+            background: #1c2330;
+            border: 2px solid var(--accent-green);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(46, 160, 67, 0.2);
+        }
+
+        .count-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* Ingredients List for Shapeless */
+        .ingredients-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            border-radius: 8px;
+            min-height: 140px;
+            justify-content: center;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+        }
+
+        .ingredient-bullet {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-amber);
+            border-radius: 50%;
+        }
+
+        /* Recipe Details Footer */
+        .card-footer {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+
+        .card-footer code {
+            background: #21262d;
+            color: #79c0ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            border-top: 1px solid var(--card-border);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge-mod">Minecraft 26.1.2 / NeoForge</span>
+        <h1>WW2 Historical Weapons Mod</h1>
+        <p>Official Crafting Recipe Guide & Item Specifications</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Controls: Search & Category Filter -->
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search recipes or items..." onkeyup="filterRecipes()">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="setCategory('all', this)">All</button>
+                <button class="filter-btn" onclick="setCategory('weapons', this)">Weapons</button>
+                <button class="filter-btn" onclick="setCategory('ammo', this)">Ammo & Mag</button>
+                <button class="filter-btn" onclick="setCategory('components', this)">Components</button>
+            </div>
+        </div>
+
+        <!-- Recipe Cards Grid -->
+        <div class="recipe-grid" id="recipeContainer">
+
+            <!-- 1. Stick Grenade -->
+            <div class="recipe-card" data-category="weapons" data-name="stick grenade">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">Stick Grenade</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Honeycomb">Honey comb</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Gunpowder">Gun powder</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Stick">Stick</div>
+                            <div class="slot empty"></div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Stick Grenade">Stick Grenade</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>stick_grenade.json</code>
+                </div>
+            </div>
+
+            <!-- 2. Type 11 LMG -->
+            <div class="recipe-card" data-category="weapons" data-name="type 11 light machine gun lmg">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">Type 11 LMG</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                            <div class="slot" title="Copper Block">Copper Block</div>
+                            <div class="slot" title="Gold Ingot">Gold Ingot</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                            <div class="slot" title="Iron Block">Iron Block</div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Type 11 LMG">Type 11</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>type_11.json</code>
+                </div>
+            </div>
+
+            <!-- 3. ZB-26 LMG -->
+            <div class="recipe-card" data-category="weapons" data-name="zb-26 light machine gun lmg">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">ZB-26 LMG</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot" title="Copper Block">Copper Block</div>
+                            <div class="slot" title="Gold Ingot">Gold Ingot</div>
+                            <div class="slot" title="Iron Ingot">Iron Ingot</div>
+                            <div class="slot" title="Planks">Planks</div>
+                            <div class="slot" title="Planks">Planks</div>
+                            <div class="slot" title="Planks">Planks</div>
+                            <div class="slot empty"></div>
+                            <div class="slot empty"></div>
+                            <div class="slot empty"></div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="ZB-26 LMG">ZB-26</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>zb_26.json</code>
+                </div>
+            </div>
+
+            <!-- 4. ZB-26 Empty Magazine -->
+            <div class="recipe-card" data-category="ammo" data-name="zb-26 empty magazine">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">ZB-26 Magazine (Empty)</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Empty ZB-26 Magazine">ZB26 Mag (Empty)</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>zb_26_magazine.json</code>
+                </div>
+            </div>
+
+            <!-- 5. Loaded ZB-26 Magazine -->
+            <div class="recipe-card" data-category="ammo" data-name="loaded zb-26 magazine">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">Loaded ZB-26 Magazine</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 1x Empty ZB-26 Magazine</li>
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 1x 20-Round Clip</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Loaded ZB-26 Magazine">Loaded ZB26 Mag</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>loaded_zb26_magazine.json</code>
+                </div>
+            </div>
+
+            <!-- 6. 6.5mm Ammo -->
+            <div class="recipe-card" data-category="ammo" data-name="6.5mm ammo bullet round">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">6.5mm Ammo</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Copper Ingot">Copper Ingot</div>
+                            <div class="slot" title="Gunpowder">Gun powder</div>
+                            <div class="slot" title="Copper Ingot">Copper Ingot</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Redstone Nugget">Redstone Nugget</div>
+                            <div class="slot empty"></div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="6.5mm Ammo">6.5mm Ammo</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>ammo_6_5_mm.json</code>
+                </div>
+            </div>
+
+            <!-- 7. 5-Round Clip (6.5mm) -->
+            <div class="recipe-card" data-category="ammo" data-name="5-round clip 6.5mm">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">5-Round Clip (6.5mm)</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 5x 6.5mm Ammo Rounds</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="5-Round Clip (6.5mm)">5-Rnd Clip (6.5)</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>five_round_clip_65.json</code>
+                </div>
+            </div>
+
+            <!-- 8. ZB-26 Round -->
+            <div class="recipe-card" data-category="ammo" data-name="zb-26 round ammo bullet">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">ZB-26 Round</div>
+                        <span class="card-type type-shaped">Shaped</span>
+                    </div>
+                    <div class="crafting-container">
+                        <div class="grid-3x3">
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Iron Nugget">Iron Nugget</div>
+                            <div class="slot empty"></div>
+                            <div class="slot" title="Copper Ingot">Copper Ingot</div>
+                            <div class="slot" title="Gunpowder Nugget">Gunpowder Nugget</div>
+                            <div class="slot" title="Copper Ingot">Copper Ingot</div>
+                            <div class="slot" title="Copper Nugget">Copper Nugget</div>
+                            <div class="slot" title="Redstone Nugget">Redstone Nugget</div>
+                            <div class="slot" title="Copper Nugget">Copper Nugget</div>
+                        </div>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="ZB-26 Round">ZB-26 Round</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>zb26_round.json</code>
+                </div>
+            </div>
+
+            <!-- 9. 5-Round Clip (ZB-26) -->
+            <div class="recipe-card" data-category="ammo" data-name="5-round clip zb-26">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">5-Round Clip (ZB-26)</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 5x ZB-26 Rounds</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="5-Round Clip (ZB-26)">5-Rnd Clip (ZB)</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>five_round_clip_zb.json</code>
+                </div>
+            </div>
+
+            <!-- 10. 20-Round Clip -->
+            <div class="recipe-card" data-category="ammo" data-name="20-round clip">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">ZB 26 20-Round Clip</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 4x ZB 26 5-Round Clips</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="20-Round Clip">20-Rnd Clip</div>
+                            <span class="count-badge">x1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>twenty_round_clip.json</code>
+                </div>
+            </div>
+
+            <!-- 11. Gunpowder Nugget -->
+            <div class="recipe-card" data-category="components" data-name="gunpowder nugget">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">Gunpowder Nugget</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 1x Gunpowder</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Gunpowder Nugget">Gunpowder Nugget</div>
+                            <span class="count-badge">x9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>gunpowder_nugget.json</code>
+                </div>
+            </div>
+
+            <!-- 12. Redstone Nugget -->
+            <div class="recipe-card" data-category="components" data-name="redstone nugget">
+                <div>
+                    <div class="card-header">
+                        <div class="card-title">Redstone Nugget</div>
+                        <span class="card-type type-shapeless">Shapeless</span>
+                    </div>
+                    <div class="crafting-container">
+                        <ul class="ingredients-list" style="width: 100%;">
+                            <li class="ingredient-item"><span class="ingredient-bullet"></span> 1x Redstone Dust</li>
+                        </ul>
+                        <div class="crafting-arrow">➔</div>
+                        <div class="output-slot-container">
+                            <div class="slot output" title="Redstone Nugget">Redstone Nugget</div>
+                            <span class="count-badge">x9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    JSON File: <code>redstone_nugget.json</code>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 WW2 Historical Weapons Mod | Built for Minecraft 1.21.2+ & NeoForge</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Filter Logic -->
+    <script>
+        let currentCategory = 'all';
+
+        function filterRecipes() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.recipe-card');
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                const category = card.getAttribute('data-category');
+
+                const matchesSearch = name.includes(query);
+                const matchesCategory = (currentCategory === 'all' || category === currentCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function setCategory(category, button) {
+            currentCategory = category;
+            
+            // Toggle active class on filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            filterRecipes();
+        }
+    </script>
+</body>
+</html>
