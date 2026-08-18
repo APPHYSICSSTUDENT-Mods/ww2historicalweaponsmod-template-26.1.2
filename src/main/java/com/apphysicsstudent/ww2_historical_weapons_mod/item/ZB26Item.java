@@ -143,19 +143,14 @@ public class ZB26Item extends Item {
             targetPos = entityHit.getLocation();
         }
 
+        //  muzzle flash particle right at the gun barrel
         if (level instanceof ServerLevel serverLevel) {
-            double distance = eyePos.distanceTo(targetPos);
-            int particleCount = (int) (distance * 2);
-
-            for (int i = 0; i < particleCount; i++) {
-                double step = (double) i / particleCount;
-                Vec3 particlePos = eyePos.add(lookVec.scale(distance * step));
-                serverLevel.sendParticles(
-                        ParticleTypes.CRIT,
-                        particlePos.x, particlePos.y, particlePos.z,
-                        1, 0, 0, 0, 0.0D
-                );
-            }
+            Vec3 barrelPos = eyePos.add(lookVec.scale(0.8D)); // Position slightly in front of player
+            serverLevel.sendParticles(
+                    ParticleTypes.SMOKE,
+                    barrelPos.x, barrelPos.y, barrelPos.z,
+                    3, 0.05, 0.05, 0.05, 0.01
+            );
         }
     }
 }
