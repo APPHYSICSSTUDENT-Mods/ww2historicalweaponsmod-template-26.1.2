@@ -17,8 +17,7 @@ public class ModItems {
     // Register the Type 11 using its CUSTOM class
     public static final DeferredItem<Item> TYPE_11_LMG = ITEMS.register("type_11",
             () -> new Type11Item(new Item.Properties()));
-
-    // Example of how to add the rest of your items! They can use the standard 'Item' class.
+// and other items
     public static final DeferredItem<Item> ZB26_MAGAZINE = ITEMS.register("zb_26_magazine_empty",
             () -> new Item(new Item.Properties()));
 

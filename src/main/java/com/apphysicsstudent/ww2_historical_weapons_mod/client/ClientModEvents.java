@@ -12,7 +12,7 @@ public class ClientModEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        // Changed this back to our custom StickGrenadeRenderer
+        // Changed this back to  custom StickGrenadeRenderer
         event.registerEntityRenderer(ModEntities.STICK_GRENADE.get(), StickGrenadeRenderer::new);
     }
 }
