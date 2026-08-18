@@ -28,4 +28,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> FIVE_ROUND_CLIP_65 = ITEMS.register("five_round_clip_65",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> STICK_GRENADE = ITEMS.register("stick_grenade",
+            () -> new Item(new Item.Properties()));
 }

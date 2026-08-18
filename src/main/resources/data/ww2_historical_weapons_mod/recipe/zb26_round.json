@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " I ",
+    "CGC",
+    "cRc"
+  ],
+  "key": {
+    "I": "minecraft:iron_nugget",
+    "C": "minecraft:copper_ingot",
+    "G": "ww2_historical_weapons_mod:gunpowder_nugget",
+    "c": "ww2_historical_weapons_mod:copper_nugget",
+    "R": "ww2_historical_weapons_mod:redstone_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "ww2_historical_weapons_mod:zb26_round"
+  }
+}

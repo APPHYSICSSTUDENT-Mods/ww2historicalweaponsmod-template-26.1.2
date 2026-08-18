@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NHN",
+    "NGN",
+    " S "
+  ],
+  "key": {
+    "N": "minecraft:iron_nugget",
+    "H": "minecraft:honeycomb",
+    "G": "minecraft:gunpowder",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "count": 1,
+    "id": "ww2_historical_weapons_mod:stick_grenade"
+  }
+}

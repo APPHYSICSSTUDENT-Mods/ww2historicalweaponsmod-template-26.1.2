@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ww2_historical_weapons_mod:zb26_round",
+    "ww2_historical_weapons_mod:zb26_round",
+    "ww2_historical_weapons_mod:zb26_round",
+    "ww2_historical_weapons_mod:zb26_round",
+    "ww2_historical_weapons_mod:zb26_round"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ww2_historical_weapons_mod:five_round_clip_zb"
+  }
+}

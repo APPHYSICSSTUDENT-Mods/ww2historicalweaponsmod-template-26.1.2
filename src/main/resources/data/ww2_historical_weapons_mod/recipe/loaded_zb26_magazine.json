@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ww2_historical_weapons_mod:zb26_magazine",
+    "ww2_historical_weapons_mod:twenty_round_clip"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ww2_historical_weapons_mod:loaded_zb26_magazine"
+  }
+}
